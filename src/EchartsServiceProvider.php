@@ -34,9 +34,12 @@ class EchartsServiceProvider extends ServiceProvider
         }
 
 
-        $this->app->booted(function () {
-            Echarts::routes(__DIR__ . '/../routes/web.php');
-        });
+        if ($this->app->environment() == 'local') {
+            $this->app->booted(function () {
+                Echarts::routes(__DIR__ . '/../routes/web.php');
+            });
+        }
+
 
         Admin::booting(function () {
             Admin::headerJs('vendor/laravel-admin-ext/echarts/echarts.min.js');
