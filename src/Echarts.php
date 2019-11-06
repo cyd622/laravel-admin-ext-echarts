@@ -161,7 +161,7 @@ class Echarts extends Extension implements Renderable
         }
 
         if (!$this->showToolbox) {
-            array_set($this->toolbox, 'show', false);
+            data_set($this->toolbox, 'show', false);
         }
 
         $this->dataSource = $this->dataSource ?: $this->data;
@@ -196,7 +196,6 @@ class Echarts extends Extension implements Renderable
      */
     public function bindLegend(array $data)
     {
-
         $this->dataSource = collect($this->data)->map(function ($item) use ($data) {
             $tmp = [];
             foreach ($data as $k => $v) {
