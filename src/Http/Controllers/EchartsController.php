@@ -89,7 +89,6 @@ class EchartsController extends Controller
             ->header('Echarts demo')
             ->description('百度echarts图表展示')
             ->row(function (Row $row) use ($box, $box2, $box3, $box4) {
-
                 $row->column(6, function (Column $column) use ($box) {
                     $column->append($box);
                 });
@@ -105,7 +104,6 @@ class EchartsController extends Controller
                 $row->column(6, function (Column $column) use ($box4) {
                     $column->append($box4);
                 });
-
             });
     }
 }
